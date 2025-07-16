@@ -3,7 +3,7 @@ pipeline {
     environment {
         PROJECT = 'Expense'
         USER = 'Sri'
-        DEPLOY_TP = "QA"
+        DEPLOY_TP = "production"
     }
     options {
         disableConcurrentBuilds()
