@@ -21,13 +21,7 @@ pipeline {
                 script {
                     sh """
                         echo "Hello this is build stage"
-                        // echo "Project: $PROJECT"
-                        // sleep 15
-                        // echo "Hello ${params.PERSON}"
-                        // echo "Biography: ${params.BIOGRAPHY}"
-                        // echo "Toggle: ${params.TOGGLE}"
-                        // echo "Choice: ${params.CHOICE}"
-                        // echo "Password: ${params.PASSOWRD}"
+                        
                     """
                 }
             }
