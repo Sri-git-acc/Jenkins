@@ -21,6 +21,7 @@ pipeline {
                 script {
                     sh """
                         echo "Hello this is build stage"
+                        echo "A is coming"
                         echo "Project: $PROJECT"
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
