@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'AGENT-1' }
-    // environment {
-    //     PROJECT = 'Expense'
-    //     USER = 'Sri'
-    // }
+    environment {
+        PROJECT = 'Expense'
+        USER = 'Sri'
+    }
     // options {
     //     disableConcurrentBuilds()
     //     timeout(time: 5, unit: 'SECONDS')
@@ -20,7 +20,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                        
+                        echo "Hello this is build stage"
+                        echo "Project: $PROJECT"
                     """
                 }
             }
