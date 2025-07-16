@@ -64,6 +64,30 @@ pipeline {
                 }
             }
         }
+        stage ('Parallel Stages') {
+            parallel {
+                stage('STAGE-1') {
+                    steps {
+                        script {
+                            sh """
+                                echo "Hello Vinni this is Stage-1"
+                                sleep 15
+                            """
+                        }
+                    }
+                }
+                stage('STAGE-2') {
+                    steps {
+                        script {
+                            sh """
+                                echo "Hello Vinni this is Stage-2"
+                                sleep 15
+                            """
+                        }
+                    }
+                }
+            }
+        }
     }
 
     post {
