@@ -1,27 +1,33 @@
 pipeline {
     agent any //{ label 'AGENT-1' }
-    // environment {
-    //     PROJECT = 'Expense'
-    //     USER = 'Sri'
-    // }
-    // options {
-    //     disableConcurrentBuilds()
-    //     timeout(time: 5, unit: 'SECONDS')
-    // }
-    // parameters{
-    //     string(name: 'PERSON', defaultValue: 'Sri', description: 'who should I say hello to?')
-    //     text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some info about person')
-    //     booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-    //     choice(name: 'CHOICE', choice: ['one', 'two', 'three'], description: 'pick something')
-    //     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    // }
+    environment {
+        PROJECT = 'Expense'
+        USER = 'Sri'
+    }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'SECONDS')
+    }
+    parameters{
+        string(name: 'PERSON', defaultValue: 'Sri', description: 'who should I say hello to?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some info about person')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choice: ['one', 'two', 'three'], description: 'pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
     stages {
         stage ('Build') {
             steps {
                 script {
                     sh """
                         echo "Hello this is build stage"
-                        
+                        echo "Project: $PROJECT"
+                        sleep 15
+                        echo "Hello ${params.PERSON}"
+                        echo "Biography: ${params.BIOGRAPHY}"
+                        echo "Toggle: ${params.TOGGLE}"
+                        echo "Choice: ${params.CHOICE}"
+                        echo "Password: ${params.PASSOWRD}"
                     """
                 }
             }
