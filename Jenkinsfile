@@ -1,5 +1,5 @@
 pipeline {
-    agent any //{ label 'AGENT-1' }
+    agent { label 'AGENT-1' }
     // environment {
     //     PROJECT = 'Expense'
     //     USER = 'Sri'
