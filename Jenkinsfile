@@ -4,10 +4,10 @@ pipeline {
         PROJECT = 'Expense'
         USER = 'Sri'
     }
-    // options {
-    //     disableConcurrentBuilds()
-    //     timeout(time: 5, unit: 'SECONDS')
-    // }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'SECONDS')
+    }
     // parameters{
     //     string(name: 'PERSON', defaultValue: 'Sri', description: 'who should I say hello to?')
     //     text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some info about person')
